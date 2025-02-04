@@ -1,0 +1,669 @@
+:root {
+    --primary-color: #00e6e6;     /* Vibrant cyan accent */
+    --secondary-color: z;    /* Clean white */
+    --background-color: #121212;   /* Deep, rich black */
+    --text-color: #f4f4f4;         /* Soft white for readability */
+    --card-background: #1e1e1e;    /* Slightly lighter than main background */
+    --border-radius: 12px;         /* Modern, slightly rounded corners */
+    --box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Subtle depth effect */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth transitions for interactive elements */
+}
+
+body {
+    font-family: 'Teko', 'Unbounded', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('head.jpg') center/cover;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    position: relative;
+}
+.header-menu {
+    max-height: 5vh;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Aligner verticalement */
+    justify-content: space-between; /* Une image à gauche et une à droite */
+    padding: 0 20px; /* Espacement horizontal */
+    background-color: var(--background-color); /* Optionnel : couleur de fond */
+}
+
+.header-menu .logo img {
+    max-width: 100px; /* Taille maximale des logos */
+    height: auto;
+    transition: transform 0.3s ease; /* Effet de survol */
+}
+
+.header-menu .logo img:hover {
+    transform: scale(1.1); /* Zoom sur hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablette */
+    .header-menu {
+        max-height: 7vh; /* Augmenter la hauteur pour mieux s'adapter */
+        flex-direction: column; /* Afficher les éléments empilés */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .header-menu .logo {
+        display: flex;
+        justify-content: space-between; /* Espace entre les logos */
+        width: 100%; /* Étendre les logos sur toute la largeur */
+    }
+
+    .header-menu .logo img {
+        max-width: 80px; /* Réduction de la taille des logos */
+    }
+}
+
+@media (max-width: 480px) { /* Téléphone */
+    .header-menu {
+        max-height: 3vh; /* Ajuster la hauteur */
+        padding: 10px;
+    }
+
+    .header-menu .logo img {
+        max-width: 60px; /* Encore plus petit pour s'adapter aux écrans étroits */
+    }
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding-top: 0;
+    margin: 0 50px; /* Centrer le contenu */
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.logo1 .pizza {
+    max-width: 290px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.header-button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: bold;
+    font-family:'Teko' ;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.header-button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+/* Logo and Branding */
+.header .container .logo {
+    display: flex;
+    justify-content: center; /* Centrer les logos */
+    align-items: center;
+    gap: 90px; /* Espace entre les logos */
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+.header .container img {
+    max-width: 120px;
+    filter: brightness(1.1) contrast(1.2); /* Enhance logo visibility */
+    margin: 0;
+}
+
+/* Hero Image and Slogan */
+.header .container .logo1 .pizza {
+    max-width: 100%; /* Ajuster la largeur */
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+}
+
+.slogan h1 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 0px; /* Espace sous le slogan */
+}
+
+.slogan span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Menu Sections */
+.sandwich, .foot1, .pizza {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: var(--box-shadow);
+}
+
+.prouduit {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+.header{
+    height: 100vh;
+}
+/* Product Card Styling */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    padding:5px;
+}
+
+.product-card {
+    background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.08), 
+    rgba(0, 0, 0, 0.25), 
+    rgba(0, 0, 0, 0.4)
+);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 230, 230, 0.4);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    color: white;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slogan h1 {
+        font-size: 2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        min-height: 80vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+/*Pizza composes */
+.pizza-metre {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: var(--box-shadow);
+}
+
+.pizza-metre h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.pizza-metre h3 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Table des pizzas */
+.pizza-metre .table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.pizza-metre .table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pizza-metre .table h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+/* Section des suppléments */
+.suplement-pizza {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+.suplement-pizza h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    grid-column: 1 / -1;
+}
+
+.suplement-pizza h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Tables des suppléments */
+.suplement-pizza table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.suplement-pizza td {
+    padding: 0rem;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suplement-pizza td:last-child {
+    text-align: right;
+    color: var(--primary-color);
+}
+
+/* Sections spécifiques */
+.formage, .legume, .viande, .fruit-mer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    padding: 1em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Responsive design pour les suppléments */
+@media (max-width: 768px) {
+    .suplement-pizza {
+        grid-template-columns: 1fr;
+    }
+    
+    .pizza-metre h1 {
+        font-size: 2rem;
+    }
+    
+    .pizza-metre h3 {
+        font-size: 1rem;
+    }
+}
+/* Footer Styling */
+.restaurant-footer {
+    background-color: #003535;
+    color: var(--text-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(0,230,230,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(0,230,230,0.2);
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-logos {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.loading-logos img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    animation: pulse 2s infinite alternate;
+}
+
+.loading-logos img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.loading-logos img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.loading-text {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-family: 'Teko', sans-serif;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .header .container .logo img {
+        max-width: 180px;
+    }
+
+    .header .container .logo1 .pizza {
+        max-width: 250px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-button {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .product-card {
+        height: 250px;
+    }
+
+    .product-name {
+        font-size: 1.2rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container .logo img {
+        max-width: 160px;
+    }
+
+    .header .container .logo1 .pizza {
+        max-width: 200px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-button {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .product-card {
+        height: 200px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 0.9rem;
+    }
+
+    .pizza-metre .table td {
+        padding: 0.5rem;
+    }
+
+    .suplement-pizza {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .header .container .logo img {
+        max-width: 100px;
+        margin-bottom: 5px;
+        
+    }
+
+    .header .container .logo1 .pizza {
+        max-width: 200px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-button {
+        width: 100%;
+        
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .product-card {
+        height: 150px;
+    }
+
+    .product-name {
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 0.8rem;
+    }
+
+    .pizza-metre .table td {
+        padding: 0.3rem;
+    }
+
+    .suplement-pizza {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1600px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 0 5px; /* Minimal horizontal padding */
+        margin: 0; /* Remove side margins */
+    }
+}
